@@ -8,8 +8,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // ✅ MongoDB Connection — paste your Compass connection string here
-const MONGO_URI = 'mongodb://localhost:27017/taskmanager';
-
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/taskmanager';
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
