@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📋 Task Manager</h1>
+
+    <!-- Status Banner -->
+    <div id="statusBanner" class="status-banner hidden"></div>
+
+    <!-- Form -->
+    <div class="form-card">
+      <h2 id="formTitle">Add New Task</h2>
+      <input type="hidden" id="editId" />
+
+      <label for="title">Title <span class="required">*</span></label>
+      <input type="text" id="title" placeholder="Enter task title" />
+
+      <label for="description">Description</label>
+      <textarea id="description" rows="3" placeholder="Enter task description"></textarea>
+
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" />
+
+      <div class="form-buttons">
+        <button id="submitBtn" onclick="submitTask()">➕ Add Task</button>
+        <button id="cancelBtn" class="cancel-btn hidden" onclick="cancelEdit()">✖ Cancel</button>
+      </div>
+    </div>
+
+    <!-- Task Table -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTableBody">
+          <tr><td colspan="5" class="empty-msg">Loading tasks...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
