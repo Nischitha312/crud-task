@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/api/tasks';
 
+const API = 'https://crud-task-tjpz.onrender.com/api/tasks';
 // ─── FETCH & RENDER ──────────────────────────────────────
 
 async function loadTasks() {
